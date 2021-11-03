@@ -51,13 +51,16 @@ const Main = () => {
 
   const handleOk = (id) => {
     setIsModalVisible(false);
-    setCols([
-      ...cols,
-      ((cols[id].name = inputs.name),
-      (cols[id].email = inputs.email),
-      (cols[id].phone = inputs.phone),
-      (cols[id].website = inputs.website)),
-    ]);
+    let sample = [...cols];
+    for (let j = 0; j < sample.length; j++) {
+      if (sample[j].id === id) {
+        sample[j].name = inputs.name;
+        sample[j].email = inputs.email;
+        sample[j].phone = inputs.phone;
+        sample[j].website = inputs.website;
+      }
+    }
+    setCols(sample);
   };
 
   const handleCancel = () => {
@@ -65,7 +68,7 @@ const Main = () => {
   };
 
   const handleLike = (i, like) => {
-    const sample = [...cols];
+    let sample = [...cols];
 
     for (let j = 0; j < sample.length; j++) {
       if (sample[j].id === i) {
@@ -176,7 +179,7 @@ const Main = () => {
                 <EditOutlined
                   onClick={() => {
                     showModal();
-                    setEditId(e.id - 1);
+                    setEditId(e.id);
                     setInputs({
                       name: e.name,
                       email: e.email,
