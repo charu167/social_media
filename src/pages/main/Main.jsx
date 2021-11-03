@@ -33,6 +33,7 @@ const Main = () => {
         .get("https://jsonplaceholder.typicode.com/users")
         .then((res) => {
           const sample = [];
+          console.log(res.data);
           res.data.map((e) => {
             e.like = false;
             sample.push(e);
@@ -64,7 +65,14 @@ const Main = () => {
   };
 
   const handleLike = (i, like) => {
-    setCols([...cols, (cols[i].like = !like)]);
+    const sample = [...cols];
+
+    for (let j = 0; j < sample.length; j++) {
+      if (sample[j].id === i) {
+        sample[j].like = !like;
+      }
+    }
+    setCols(sample);
   };
 
   const handleDelete = (i) => {
@@ -151,14 +159,14 @@ const Main = () => {
                 {e.like === false ? (
                   <HeartOutlined
                     onClick={() => {
-                      handleLike(e.id - 1, e.like);
+                      handleLike(e.id, e.like);
                     }}
                     key="like"
                   />
                 ) : (
                   <HeartFilled
                     onClick={() => {
-                      handleLike(e.id - 1, e.like);
+                      handleLike(e.id, e.like);
                     }}
                     key="like"
                   />
