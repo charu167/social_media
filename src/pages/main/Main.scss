@@ -1,0 +1,81 @@
+.main {
+  padding: 10px;
+  .col {
+    .card {
+      border: 1px solid #e8e8e8;
+
+      img {
+        background-color: #f5f5f5;
+        height: 200px;
+        border: 1px solid #e8e8e8;
+      }
+
+      .card-icon-1 {
+        display: flex;
+        align-items: stretch;
+        justify-content: start;
+        column-gap: 12px;
+        font-size: 14px;
+        color: #595959;
+        margin-bottom: -10px;
+
+        svg {
+          margin-right: 1px;
+          color: #595959;
+          font-size: large;
+        }
+      }
+    }
+
+    .like {
+      font-size: 20px;
+      background-color: #fafafa;
+      margin-bottom: -13px;
+      margin-top: -13px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e8e8e8;
+      border-top: 1px solid #e8e8e8;
+
+      svg {
+        fill: rgb(255, 0, 0);
+      }
+    }
+
+    .edit {
+      font-size: 20px;
+      background-color: #fafafa;
+      margin-bottom: -13px;
+      margin-top: -13px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e8e8e8;
+      border-top: 1px solid #e8e8e8;
+
+      svg {
+        fill: #898989;
+      }
+    }
+
+    .delete {
+      font-size: 20px;
+      background-color: #fafafa;
+      margin-bottom: -13px;
+      margin-top: -13px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e8e8e8;
+      border-top: 1px solid #e8e8e8;
+
+      svg {
+        fill: #898989;
+      }
+    }
+  }
+
+  .input-box {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+}
